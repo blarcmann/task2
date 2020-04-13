@@ -23,7 +23,7 @@ function NoResult({ fetchFilteredCourses }) {
   return (
     <div className="no-result mt-5 ml-3">
       <h2>No result was found</h2>
-      <p className="options">Try there keywords</p>
+      <p className="options">Try these keywords</p>
       <ul>
         {options.map((option, i) => (
           <li key={i}>

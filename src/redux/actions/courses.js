@@ -4,14 +4,14 @@ import {
   FETCH_COURSE,
   CLEAR,
   INITIALIZED,
-  ERROR
+  ERROR,
+  COMPLETED
 } from '../constants';
 import axios from 'axios';
 const url = 'http://staging-api.quze.co/search/intern-test/_search';
 
 export function fetchFeaturedCourses() {
   return dispatch => {
-    dispatch(clear());
     dispatch(initialized());
     axios.post(`${url}`, {})
       .then(response => {
@@ -20,6 +20,7 @@ export function fetchFeaturedCourses() {
         }
         const featured = response.data.hits.hits;
         dispatch(featuredCourses(featured));
+        dispatch(completed())
       })
       .catch(error => {
         dispatch(errorOccured())
@@ -33,7 +34,14 @@ export function fetchCourse(id) {
   return dispatch => {
     dispatch(clear());
     dispatch(initialized());
-    axios.post(`${url}`)
+    axios.post(`${url}`, {
+      "size": 1,
+      "query": {
+        "match": {
+          "courseId": id
+        }
+      }
+    })
       .then(response => {
         if (response.success === false) {
           return console.log(response, 'not successful');
@@ -44,6 +52,7 @@ export function fetchCourse(id) {
           if (Number(course._id) === Number(id)) {
             console.log(course);
             dispatch(courseDetails(course));
+            dispatch(completed());
           }
         })
       })
@@ -58,9 +67,7 @@ export function fetchCourse(id) {
 export function fetchFilteredCourses(payload) {
   return dispatch => {
     dispatch(initialized());
-    dispatch(clear());
     axios.post(`${url}`, {
-      "size": 1,
       "query": {
         "match": {
           "title": payload.keyword
@@ -73,6 +80,7 @@ export function fetchFilteredCourses(payload) {
         }
         let allCourses = response.data.hits.hits;
         dispatch(filteredCourses(allCourses));
+        dispatch(completed());
       })
       .catch(error => {
         console.log('catch error register', error);
@@ -132,6 +140,13 @@ function courseDetails(payload) {
 function clear() {
   return {
     type: CLEAR,
+    payload: ''
+  }
+}
+
+function completed() {
+  return {
+    type: COMPLETED,
     payload: ''
   }
 }

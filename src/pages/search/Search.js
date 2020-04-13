@@ -32,7 +32,7 @@ export class Search extends Component {
 
 
   render() {
-    const { courses } = this.props;
+    const { courses, initialized } = this.props;
     console.log('jhdfjjdfj', courses)
     return (
       <>
@@ -56,7 +56,7 @@ export class Search extends Component {
             <div className="row">
               {courses.length && courses[0].length > 0
                 ? <FeaturedCourses courses={courses} />
-                : <NoResult />}
+                : (initialized ? <h1 className="mt-5 ml-2">Please wait...</h1> : <NoResult />)}
             </div>
           </div>
         </div>
@@ -66,7 +66,8 @@ export class Search extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  courses: state.courses.courses
+  courses: state.courses.courses,
+  initialized: state.courses.initialized,
 })
 
 const mapDispatchToProps = { fetchFeaturedCourses, fetchFilteredCourses }

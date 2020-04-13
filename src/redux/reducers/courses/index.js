@@ -21,7 +21,7 @@ export default function articles(state = initialState, action) {
     case FETCH_FEATURED_COURSES:
       return {
         ...state,
-        courses: [...state.courses, action.payload],
+        courses: [action.payload],
       }
     case FETCH_FILTERED_COURSES:
       return {
@@ -54,7 +54,7 @@ export default function articles(state = initialState, action) {
       return {
         ...state,
         course: {},
-        featuredCourses: [],
+        courses: [],
       }
     default:
       return state;
