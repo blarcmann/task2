@@ -1,0 +1,45 @@
+.search-page {
+  .banner {
+    display: flex;
+    align-items: center;
+    background-color: rgba(66, 70, 61, 0.25);
+    background-image: url("https://i.ibb.co/MS3X3MM/search-bg.jpg");
+    background-blend-mode: overlay;
+    background-size: cover;
+    height: 400px;
+    color: #fff;
+  }
+  .content {
+    width: 100%;
+    text-align: center;
+    .search {
+      form {
+        display: flex;
+        justify-content: center;
+        width: 44%;
+        margin: 1.5rem auto;
+        position: relative;
+        @media(max-width: 600px) {
+          width: 90%;
+        }
+        input {
+          width: 90%;
+        }
+        button {
+          background-color: #1c77f8;
+          height: 44px;
+          width: 52px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: none;
+          cursor: pointer;
+          img {
+            width: 15px;
+            height: 15px;
+          }
+        }
+      }
+    }
+  }
+}

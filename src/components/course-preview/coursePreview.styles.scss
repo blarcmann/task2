@@ -1,0 +1,51 @@
+.course-preview {
+  width: 94%;
+  .preview-img {
+    background-image: url("https://pluralsight.imgix.net/course-images/aws-developer-getting-started-v1.jpg");
+    background-size: cover;
+    background-position-x: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    width: 100%;
+    margin: auto;
+    border-radius: 0.25rem;
+    &.content {
+      background-color: rgba(0,0,0,.6);
+      background-blend-mode: overlay;
+    }
+    .prev-content {
+      button {
+        background-color: #f93;
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto;
+        &:hover {
+          background-color: rgb(255, 162, 75);
+        }
+        img {
+          width: 14px;
+          height: 14px;
+          position: relative;
+          bottom: 0.125rem;
+        }
+      }
+      span {
+        display: block;
+        margin-top: 0.5rem;
+        color: #fff;
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+    }
+  }
+  .primary {
+    display: block;
+    width: 100%;
+    margin: 1rem auto;
+  }
+}

@@ -1,0 +1,60 @@
+.bread-crumb {
+  width: 100%;
+  ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding-left: 0;
+    li {
+      position: relative;
+      background: #1c77f8;
+      color: #Fff;
+      height: 30px;
+      padding: 0 20px 0 40px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1;
+      font-size: 0.75rem;
+      a {
+        color: #fff;
+      }
+      &:first-child {
+        background: #888;
+        &:before, &:after {
+          background: #888;
+        }
+      }
+      &:last-child {
+        &:before, &:after {
+          border-right: 0px;
+        }
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: #1c77f8;
+        top: 0;
+        right: -10px;
+        z-index: 9;
+        border-right: 2px solid #fff;
+        transform: skewX(45deg);
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: #1c77f8;
+        bottom: 0;
+        right: -10px;
+        z-index: 9;
+        border-right: 2px solid #fff;
+        transform: skewX(-45deg);
+      }
+    }
+  }
+}

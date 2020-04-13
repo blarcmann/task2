@@ -1,0 +1,53 @@
+.course-data {
+  @media(min-width: 992px) {
+    width: 90%;
+  }
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .others {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    span {
+      display: block;
+      margin-bottom: 0.75rem;
+      font-size: 0.875rem;
+      color: #333;
+      &.rating {
+        span {
+          display: inline;
+        }
+      }
+    }
+    .spacing {
+      margin: 0 0.4rem;
+    }
+  }
+  .banner-section {
+    margin-top: 0.75rem;
+    h6 {
+      font-weight: 600;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      span {
+        color: #1c77f8;
+        font-size: 0.875rem;
+        &.tag {
+          display: block;
+          font-size: 0.75rem;
+          color: #fff;
+          background-color: #1c77f8;
+          padding: 0.25rem 0.4rem;
+          border-radius: 0.125rem;
+          margin-bottom: 0.75rem;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+    .course-card, .share {
+      border: 1px solid #eaeaea;
+      border-radius: 0.4rem;
+      padding: 1.5rem;
+    }
+    .course-card {
+      .card-title {
+        font-size: 1.5rem;
+        border-bottom: 2px solid #1c77f8;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+      }
+      h3 {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      p {
+        font-size: 0.935rem;
+        color: #333;
+        line-height: 1.75rem;
+      }
+      ul {
+        li{
+          font-size: 0.875rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+      .key-value {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 1rem;
+        .key {
+          font-size: 0.935rem;
+          font-weight: 500;
+          margin-right: 0.5rem;
+        }
+        .value {
+          font-weight: 300;
+          font-size: 0.875rem;
+        }
+      }
+    }

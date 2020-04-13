@@ -1,0 +1,15 @@
+.course-description {
+  .course-banner {
+    background-color: rgba(255, 255, 255, 0.9);
+    background-blend-mode: overlay;
+    background-size: cover;
+    border-bottom: 1px solid #eaeaea;
+  }
+  .course-content {
+    margin-bottom: 3rem;
+    .share {
+      width: 94%;
+      margin: auto;
+    }
+  }
+}

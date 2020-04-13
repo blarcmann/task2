@@ -1,0 +1,63 @@
+.course {
+  margin-bottom: 1.75rem;
+  color: #333;
+  &-img {
+    height: 156px;
+    position: relative;
+    background-size: cover;
+    border-radius: 0.25rem 0.25rem 0 0;
+    .data {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 0.25rem 0.5rem;
+      background: rgba(0,0,0,.5);
+      display: flex;
+      justify-content: space-between;
+      color: #FFF;
+      .user {
+        display: flex;
+        align-items: center;
+        img {
+          width: 16px;
+          height: 15px;
+          margin-right: 0.5rem;
+        }
+        span {
+          font-size: 0.875rem;
+        }
+      }
+      .rating {
+        .star {
+          // color: gold;
+          font-size: 0.875rem;
+          margin-right: 0.125rem;
+        }
+      }
+    }
+  }
+  &-details {
+    padding: 1.125rem;
+    border: 1px solid #eaeaea;
+    border-radius: 0 0 .25rem .25rem;
+    text-align: center;
+    h5 {
+      color: #1c77f8;
+      font-size: 0.935rem;
+      font-weight: 300;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 250px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    h6 {
+      margin-top: 0.75rem;
+      font-weight: 600;
+      font-size: 0.935rem;
+    }
+  }
+}
