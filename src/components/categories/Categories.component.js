@@ -5,7 +5,7 @@ import './categories.styles.scss';
 
 
 function Categories({ fetchFilteredCourses }) {
-  const [activeTab, setToActive] = useState('featured');
+  const [activeTab, setToActive] = useState('');
 
   function setFilterValue(filterBy) {
     const payload = {
@@ -22,9 +22,6 @@ function Categories({ fetchFilteredCourses }) {
   return (
     <div className="categories-component">
       <div className="categories">
-        <div className={activeTab === 'featured' ? "category active" : "category"}
-          onClick={() => activateTab('featured')}
-        >Featured Courses</div>
         <div className={activeTab === 'advanced' ? "category active" : "category"}
           onClick={() => activateTab('advanced')} >Advanced</div>
         <div className={activeTab === 'programming' ? "category active" : "category"}
